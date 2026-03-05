@@ -1,0 +1,25 @@
+USE dbms_lab;
+
+START TRANSACTION;
+
+INSERT INTO employee VALUES (101,'abhi','manager',1234,10000,70);
+INSERT INTO employee VALUES (102,'rohith','analyst',2345,9000,65);
+INSERT INTO employee VALUES (103,'david','analyst',3456,9000,65);
+
+SELECT * FROM employee;
+
+ROLLBACK;
+SELECT * FROM employee;
+TRUNCATE TABLE employee;
+
+ALTER TABLE employee
+ADD PRIMARY KEY (empno);
+
+ALTER TABLE employee
+MODIFY ename VARCHAR(10) NOT NULL;
+DESC employee;
+
+INSERT INTO employee VALUES (105,'rahul','HR',5468,4000,95);
+INSERT INTO employee VALUES (106,NULL,'HR',5509,8000,80);
+INSERT INTO employee VALUES (105,'somu','HR',5468,4000,95);
+INSERT INTO employee VALUES (NULL,'rahul','HR',5468,4000,95);
